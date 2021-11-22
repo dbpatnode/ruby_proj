@@ -30,9 +30,14 @@ loop do
     city_names = get_city_names(dial_book)
     puts "please copy and paste a city from the following list to get its area code:"
     puts get_city_names(dial_book)
+    
 
     choosen_city = gets.chomp
-    puts "you've choosen #{choosen_city}, its area code is #{get_area_code(dial_book, choosen_city)}"
+    if dial_book.include?(choosen_city)
+        puts "you've choosen #{choosen_city}, its area code is #{get_area_code(dial_book, choosen_city)}"
+    else
+        puts "that wasnt a valid city name please try again."
+    end
 end
 
 
